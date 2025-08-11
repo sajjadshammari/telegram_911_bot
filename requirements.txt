@@ -29,7 +29,8 @@ PyScreeze==1.0.1
 pytesseract==0.3.13
 python-dotenv==1.1.1
 pytweening==1.2.0
-pywin32==311; sys_platform == "win32"
+wmi; platform_system == "Windows"
+pywin32; platform_system == "Windows"
 requests==2.32.4
 rsa==4.9.1
 six==1.17.0
