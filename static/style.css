@@ -1,0 +1,202 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: #1b1f23;
+    color: #ffffff;
+    direction: rtl;
+    padding: 20px;
+}
+
+h1 {
+    text-align: center;
+    font-size: 28px;
+    color: #00bcd4;
+    margin-bottom: 30px;
+}
+
+h2, h3 {
+    text-align: center;
+    color: #00acc1;
+    margin-top: 20px;
+}
+
+.flex-container {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.column {
+    flex: 1;
+    min-width: 350px;
+    background: #24292e;
+    padding: 20px;
+    border: 1px solid #00acc1;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+    transition: 0.3s;
+}
+
+.column:hover {
+    box-shadow: 0 4px 20px rgba(0,0,0,0.5);
+}
+
+.chat {
+    border: 1px solid #00acc1;
+    padding: 10px;
+    height: 300px;
+    overflow-y: auto;
+    background: #2c313a;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+.message {
+    margin-bottom: 10px;
+    background: #3b4048;
+    padding: 8px;
+    border-radius: 5px;
+    border-left: 3px solid #00bcd4;
+    font-size: 14px;
+}
+
+button {
+    background: #00bcd4;
+    color: #ffffff;
+    padding: 8px 16px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background 0.3s, transform 0.2s;
+}
+
+button:hover {
+    background: #0097a7;
+    transform: scale(1.02);
+}
+
+table.dataTable {
+    background: #2c313a;
+    border-radius: 6px;
+    overflow: hidden;
+    width: 100%;
+    border-collapse: collapse;
+}
+
+table.dataTable th {
+    background-color: #00bcd4;
+    color: #ffffff;
+    text-align: center;
+    padding: 10px;
+}
+
+table.dataTable td {
+    background-color: #24292e;
+    color: #ffffff;
+    text-align: center;
+    padding: 8px;
+}
+
+table.dataTable tbody tr:hover {
+    background-color: #33383f;
+}
+
+.dataTables_wrapper .dataTables_filter input {
+    background: #2c313a;
+    color: #ffffff;
+    border: 1px solid #00bcd4;
+    border-radius: 4px;
+    padding: 5px;
+}
+
+.dataTables_wrapper .dataTables_length select {
+    background: #2c313a;
+    color: #ffffff;
+    border: 1px solid #00bcd4;
+    border-radius: 4px;
+    padding: 5px;
+}
+
+.dataTables_wrapper .dataTables_info,
+.dataTables_wrapper .dataTables_paginate {
+    color: #cccccc;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 999;
+    padding-top: 100px;
+    left: 0; top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.7);
+}
+
+.modal-content {
+    background: #24292e;
+    margin: auto;
+    padding: 20px;
+    border: 2px solid #00bcd4;
+    width: 420px;
+    border-radius: 12px;
+    text-align: center;
+    box-shadow: 0 0 20px rgba(0,0,0,0.7);
+    transition: 0.3s;
+}
+
+.modal-content h2 {
+    color: #00bcd4;
+    margin-bottom: 15px;
+}
+
+.modal-content textarea {
+    width: 100%;
+    height: 160px;
+    background: #2c313a;
+    color: #ffffff;
+    border: 1px solid #00bcd4;
+    border-radius: 6px;
+    padding: 10px;
+    resize: none;
+    transition: 0.3s;
+}
+
+.modal-content textarea:focus {
+    outline: none;
+    border-color: #0097a7;
+}
+
+.modal-buttons {
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.modal-buttons button {
+    flex: 1;
+    margin: 0 5px;
+    background: #00bcd4;
+    color: #ffffff;
+    padding: 10px 0;
+    border: none;
+    border-radius: 6px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.2s;
+}
+
+.modal-buttons button:hover {
+    background: #0097a7;
+    transform: scale(1.03);
+}
+a {
+    color: #00ffff !important; /* لون سماوي واضح */
+    text-decoration: none; /* بدون خط تحت الرابط */
+}
+
+a:hover {
+    color: #00bcd4 !important; /* لون مختلف عند المرور */
+    text-decoration: underline;
+}

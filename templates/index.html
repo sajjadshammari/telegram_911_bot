@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <title>رصد القنوات</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.13.4/css/jquery.dataTables.min.css">
+</head>
+<body>
+    <div style="text-align: center;">
+        <img src="{{ url_for('static', filename='MOI.png') }}" alt="شعار وزارة الداخلية" style="max-width: 100px; margin-top: 5px;">
+    </div>
+    <h1>📡 رصد القنوات</h1>
+    <h1>رصد تليكرام</h1>
+
+    <div class="flex-container">
+        <div class="column">
+            <div style="text-align: center;">
+                <img src="{{ url_for('static', filename='Telegram_Messenger.png') }}" alt="تليكرام " style="max-width: 60px; margin-top: 1px;">
+            </div>
+            <h2>رسائل التليكرام</h2>
+            <button onclick="clearMessages('telegram')">🗑️ تصفير الرسائل</button>
+            <div class="chat" id="telegramBox"></div>
+
+            <h3>إدارة قنوات التليكرام</h3>
+            <button onclick="openChannelModal('telegram')">🔧 تعديل القنوات</button>
+            <table id="telegramTable" class="display"></table>
+        </div>
+    </div>
+
+    <!-- Modal -->
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <h2 id="modalTitle"></h2>
+            <table id="channelTable" border="1" style="width: 100%; text-align: center;">
+                <thead>
+                    <tr>
+                        <th>اسم القناة</th>
+                        <th>الرابط</th>
+                        <th>حذف</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- الصفوف تضاف هنا -->
+                </tbody>
+            </table>
+            <button onclick="addRow()">➕ إضافة صف</button>
+            <div class="modal-buttons">
+                <button onclick="saveChannels()">💾 حفظ</button>
+                <button onclick="closeModal()">❌ إلغاء</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
+    <script src="https://cdn.datatables.net/1.13.4/js/jquery.dataTables.min.js"></script>
+    <script src="{{ url_for('static', filename='app.js') }}"></script>
+</body>
+</html>
