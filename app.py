@@ -55,17 +55,17 @@ def save_channels():
     c.execute("DELETE FROM telegram_channels")
     for ch in channels:
         if '|' in ch:
-            link, display_name = map(str.strip, ch.split('|', 1))  # ✅ تعديل هنا
+            link, display_name = map(str.strip, ch.split('|', 1))
         else:
             link = ch.strip()
             display_name = 'غير معروف'
-        c.execute("INSERT INTO telegram_channels (link, display_name) VALUES (?, ?)", (link, display_name))
+        c.execute(
+            "INSERT INTO telegram_channels (link, display_name) VALUES (?, ?)",
+            (link, display_name)
+        )
 
     conn.commit()
     conn.close()
-
-    return jsonify({"status": "success"})
-
 
     return jsonify({"status": "success"})
 
@@ -76,4 +76,6 @@ if __name__ == "__main__":
         subprocess.Popen([python_exe, "telethon_bot.py"])
         print("🟢 telethon_bot.py started")
 
-    app.run(debug=True)
+    # 📌 على Render لازم نستخدم PORT من env
+    port = int(os.environ.get("PORT", 5000))
+    app.run(debug=False, host="0.0.0.0", port=port)
